@@ -1,0 +1,37 @@
+html,body {
+    width: 100%;
+}
+
+.App {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.select-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.select-flex>div:first-of-type {
+    width: 100%;
+    margin-right: 5px;
+}
+
+.select-flex>div:last-of-type {
+    width: 100%;
+    margin-left: 5px;
+}
+
+.matches-table-responsive {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    border-radius: 3px;
+    border: none;
+}
+
+.matches-table {
+    overflow-x: auto;
+}
