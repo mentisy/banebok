@@ -1,0 +1,23 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Avolle\\Banebok\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Avolle\\Banebok\\": "src/"
+        }
+    },
+    "require": {
+        "cakephp/http": "^4.4",
+        "cakephp/chronos": "^2.3",
+        "filp/whoops": "^2.15",
+        "monolog/monolog": "^3.3",
+        "symfony/cache": "^6.2",
+        "phpoffice/phpspreadsheet": "^1.28"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^6.2"
+    }
+}
