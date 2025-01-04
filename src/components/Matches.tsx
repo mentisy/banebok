@@ -1,4 +1,3 @@
-import React from "react";
 import { Match } from "../Api/Entities";
 import { format } from "date-fns";
 import { nb } from "date-fns/locale";

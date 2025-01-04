@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import "./App.css";
 import { endOfWeek, format } from "date-fns";
 import { nb } from "date-fns/locale";
@@ -10,13 +10,13 @@ function App() {
     const [loadingState, setLoadingState] = useState(true);
 
     const [dates, setDates] = useState({
-        from: format(new Date(), "Y-MM-dd", { locale: nb }),
-        to: format(endOfWeek(new Date(), { locale: nb }), "Y-MM-dd"),
+        from: format(new Date(), "y-MM-dd", { locale: nb }),
+        to: format(endOfWeek(new Date(), { locale: nb }), "y-MM-dd"),
     });
 
     const [matches, setMatches] = useState<Match[]>([]);
 
-    const handleDateChange = (event: any) => {
+    const handleDateChange = (event: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
 
         setDates((prevState) => ({
@@ -30,9 +30,10 @@ function App() {
             setMatches(res.data.matches);
             setLoadingState(false);
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    const handleSubmit = (event: any): false => {
+    const handleSubmit = (event: FormEvent<HTMLFormElement>): false => {
         event.preventDefault();
         setLoadingState(true);
         getMatches(new Date(dates.from), new Date(dates.to)).then((res) => {
