@@ -136,7 +136,7 @@ class Matches
             static::FOTBALL_URL_TEMPLATE,
         );
         $log = new Logger('Info', [new StreamHandler(LOGS . 'info.log', Level::Info)]);
-        $log->info("Getting from API for date ${dates['from']} to ${dates['to']}");
+        $log->info("Getting from API for date {$dates['from']} to {$dates['to']}");
 
         $res = $this->client->get($url);
         if (!$res->isOk()) {
